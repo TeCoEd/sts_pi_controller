@@ -7,10 +7,10 @@ app = Flask(__name__)
 @app.route("/<state>")
 def update_robot(state=None):
     if state == 'forward':
-        eh.motor.one.backwards(100)
+        eh.motor.one.forwards(100)
         eh.motor.two.forwards(100)
     if state == 'back':
-        eh.motor.one.forwards(100)
+        eh.motor.one.backwards(100)
         eh.motor.two.backwards(100)
     if state == 'left':
         eh.motor.two.stop()
